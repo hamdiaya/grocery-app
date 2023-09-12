@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 
-import '../../../../../core/utils/constants.dart';
-import '../../../../../core/utils/styles.dart';
+import '../utils/constants.dart';
+import '../utils/styles.dart';
 
 class HeadOfListViews extends StatelessWidget {
   const HeadOfListViews({

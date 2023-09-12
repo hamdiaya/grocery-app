@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:go_router/go_router.dart';
+import 'package:laza_ecommerce/core/utils/app_routes.dart';
 import 'package:laza_ecommerce/features/home/presentation/views/widgets/featured_product_card.dart';
 
 class FeaturedProductsListView extends StatelessWidget {
@@ -26,7 +28,8 @@ class FeaturedProductsListView extends StatelessWidget {
                       productName: 'Fresh Peach',
                       doze: 'dozen',
                       onTap: () {
-                        
+                        GoRouter.of(context)
+                            .push(AppRoutes.productDetailsViewPath);
                       },
                     ),
                     FeaturedProductCard(

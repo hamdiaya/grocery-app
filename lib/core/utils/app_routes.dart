@@ -6,6 +6,7 @@ import 'package:laza_ecommerce/features/auth/presentation/views/password_reset_s
 import 'package:laza_ecommerce/features/auth/presentation/views/sign_up_view.dart';
 import 'package:laza_ecommerce/features/auth/presentation/views/verification_code_view.dart';
 import 'package:laza_ecommerce/features/home/presentation/views/home_view.dart';
+import 'package:laza_ecommerce/features/product_details/presentation/views/product_details_view.dart';
 import 'package:laza_ecommerce/features/introduction/presentation/views/intro_view.dart';
 import 'package:laza_ecommerce/features/introduction/presentation/views/splash_view.dart';
 
@@ -18,6 +19,7 @@ abstract class AppRoutes {
   static const newPasswordViewPath = '/newPasswordView';
   static const passwordResetSuccessPath = '/passwordResetSuccessView';
   static const homeViewPath = '/homeView';
+  static const productDetailsViewPath = '/ProductDetailsView';
   static final router = GoRouter(routes: [
     GoRoute(
       path: '/',
@@ -51,9 +53,13 @@ abstract class AppRoutes {
       path: '/passwordResetSuccessView',
       builder: (context, state) => const PasswordResetSuccess(),
     ),
-     GoRoute(
+    GoRoute(
       path: '/homeView',
       builder: (context, state) => const HomeView(),
+    ),
+     GoRoute(
+      path: '/ProductDetailsView',
+      builder: (context, state) => const ProductDetailsView(),
     ),
   ]);
 }
