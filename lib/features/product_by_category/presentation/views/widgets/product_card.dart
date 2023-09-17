@@ -5,8 +5,8 @@ import 'package:laza_ecommerce/core/utils/constants.dart';
 import 'package:laza_ecommerce/core/utils/styles.dart';
 import '../../../../../core/utils/design_size.dart';
 
-class FeaturedProductCard extends StatefulWidget {
-  const FeaturedProductCard(
+class ProductCard extends StatefulWidget {
+  const ProductCard(
       {super.key,
       required this.imgUrl,
       required this.price,
@@ -20,25 +20,23 @@ class FeaturedProductCard extends StatefulWidget {
   final void Function() onTap;
 
   @override
-  State<FeaturedProductCard> createState() => _FeaturedProductCardState();
+  State<ProductCard> createState() => _FeaturedProductCardState();
 }
 
 bool favour = false;
 
-class _FeaturedProductCardState extends State<FeaturedProductCard> {
+class _FeaturedProductCardState extends State<ProductCard> {
   @override
   Widget build(BuildContext context) {
     return GestureDetector(
       onTap: widget.onTap,
       child: Container(
         width: MediaQuery.of(context).size.width * 160 / DesignSize.width,
-        
         decoration: BoxDecoration(
           color: greyFill,
           borderRadius: BorderRadius.circular(10),
         ),
         child: Column(
-          
           children: [
             Expanded(
               child: Row(
@@ -63,21 +61,18 @@ class _FeaturedProductCardState extends State<FeaturedProductCard> {
                 ],
               ),
             ),
-           
             Expanded(
               child: SvgPicture.asset(
                 widget.imgUrl,
-                width: MediaQuery.of(context).size.width * 80 / DesignSize.width,
-                height:
-                    MediaQuery.of(context).size.height * 80 / DesignSize.height,
               ),
             ),
-           const SizedBox(height: 20,),
+            const SizedBox(
+              height: 20,
+            ),
             Text(
               widget.price,
               style: Styles.textStyle15.copyWith(color: primaryColor),
             ),
-          
             Text(
               widget.productName,
               style: Styles.textStyle17.copyWith(
@@ -88,9 +83,12 @@ class _FeaturedProductCardState extends State<FeaturedProductCard> {
               widget.doze,
               style: Styles.textStyle15.copyWith(color: grey),
             ),
-            const SizedBox(height: 20,),
+            const SizedBox(
+              height: 20,
+            ),
           ],
         ),
       ),
-    );  }
+    );
+  }
 }

@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:go_router/go_router.dart';
+import 'package:laza_ecommerce/core/utils/app_routes.dart';
 import 'package:laza_ecommerce/core/utils/design_size.dart';
 import 'package:laza_ecommerce/features/home/presentation/views/widgets/category_card.dart';
 
@@ -16,7 +18,9 @@ class CategoriesListView extends StatelessWidget {
           scrollDirection: Axis.horizontal,
           itemBuilder: (context, index) {
             return GestureDetector(
-              onTap: () {},
+              onTap: () {
+                GoRouter.of(context).push(AppRoutes.productsOfCategoryViewPath);
+              },
               child: const CategoryCard(
                   categoryName: 'vegetables', icon: Icons.apple),
             );

@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-
 import '../../../../../core/utils/constants.dart';
 import '../../../../../core/utils/design_size.dart';
 import '../../../../../core/utils/styles.dart';
@@ -15,6 +14,7 @@ class CategoryCard extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Column(
+      mainAxisAlignment: MainAxisAlignment.center,
       children: [
         Container(
             width: MediaQuery.of(context).size.width * 55 / DesignSize.width,

@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:go_router/go_router.dart';
+import 'package:laza_ecommerce/core/utils/app_routes.dart';
 import 'package:laza_ecommerce/core/utils/styles.dart';
 import 'package:laza_ecommerce/features/product_details/presentation/views/widgets/add_to_cart_button.dart';
 import 'package:laza_ecommerce/features/product_details/presentation/views/widgets/description_and_review_widget.dart';
@@ -20,7 +22,9 @@ class ProductDetailsViewBody extends StatelessWidget {
         children: [
           const ProductDetailsViewAppBar(),
           const ProductImagePreview(),
-          const SizedBox(height: 10,),
+          const SizedBox(
+            height: 10,
+          ),
           const ProductGeneralInfo(),
           const SizedBox(
             height: 20,
@@ -29,7 +33,9 @@ class ProductDetailsViewBody extends StatelessWidget {
             'Description',
             style: Styles.textStyle17,
           ),
-          const SizedBox(height: 5,),
+          const SizedBox(
+            height: 5,
+          ),
           const DescriptionAndReviewWidget(
             description:
                 "Organic Mountain works as a seller for many organic growers of organic lemons. Organic lemons are easy to spot in your produce aisle. They are just like regular lemons, but they will usually have a few more scars on the outside of the lemon skin. Organic lemons are considered to be the world's finest lemon for juicing",
@@ -37,18 +43,24 @@ class ProductDetailsViewBody extends StatelessWidget {
           const SizedBox(
             height: 10,
           ),
-          HeadOfListViews(listViewTitle: 'Reviews', onPressed: () {}),
-          
-          const ReviewsListView(),
-          const SizedBox(height: 20,),
+          HeadOfListViews(
+              listViewTitle: 'Reviews',
+              onPressed: () {
+                GoRouter.of(context).push(AppRoutes.allTheReviewsViewPath);
+              }),
+          const ReviewsListView(itemCount: 3,),
+          const SizedBox(
+            height: 20,
+          ),
           const ProductQuantity(),
-          const SizedBox(height: 20,),
-           AddToCartButton(
-          onTap: (){},
-         ),
+          const SizedBox(
+            height: 20,
+          ),
+          AddToCartButton(
+            onTap: () {},
+          ),
         ],
       ),
     );
   }
 }
-
