@@ -4,6 +4,7 @@ import 'package:laza_ecommerce/core/utils/app_routes.dart';
 import 'package:laza_ecommerce/core/widgets/general_app_bar.dart';
 import 'package:laza_ecommerce/core/widgets/general_button.dart';
 import 'package:laza_ecommerce/features/shopping/presentation/views/widgets/adress_form.dart';
+import 'shipping_info_timelines.dart';
 
 class ShippingAdressViewBody extends StatefulWidget {
   const ShippingAdressViewBody({super.key});
@@ -33,6 +34,7 @@ class _ShippingAdressViewBodyState extends State<ShippingAdressViewBody> {
         crossAxisAlignment: CrossAxisAlignment.center,
         children: [
           const GeneralAppBar(title: 'Address'),
+          ShippingInfoTimelines(pageNumber: 1,),
           AdressForm(
             nameController: nameController,
             cityController: cityController,

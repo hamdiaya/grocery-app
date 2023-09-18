@@ -15,14 +15,13 @@ class ShippingInfoTimelines extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return SizedBox(
-      width: MediaQuery.of(context).size.width,
+
+      width: 180,
       height: MediaQuery.of(context).size.height * 80 / DesignSize.height,
-    
+
       child: Timeline.tileBuilder(
-     
         scrollDirection: Axis.horizontal,
         builder: TimelineTileBuilder(
-         
           itemCount: 2,
           endConnectorBuilder: (context, index) {
             if (index != shippingProcess.length - 1) {
